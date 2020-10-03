@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Airbnb price prediction Model for London</title>
+</head>
+<body>
+             <h1 align="center">Airbnb Price Prediction Form for London</h1>
+
+
+<div>
+    <form action="{{ url_for('home') }}" method="POST">
+    <fieldset>
+        <legend>Attributes:</legend>
+
+        <label for="London_Borough">London Borough:  </label>
+        <select id="London_Borough" name="London_Borough" required>
+             <option value="Barking and Dagenham">Barking and Dagenham</option>
+             <option value="Barnet">Barnet</option>
+             <option value="Bexley">Bexley</option>
+             <option value="Brent" >Brent</option>
+             <option value="Bromley">Bromley</option>
+             <option value="Camden" >Camden</option>
+             <option value="City of London" >City of London</option>
+             <option value="Croydon">Croydon</option>
+             <option value="Ealing">Ealing</option>
+             <option value="Enfield" >Enfield</option>
+             <option value="Greenwich">Greenwich</option>
+             <option value="Hackney">Hackney</option>
+             <option value="Hammersmith and Fulham" >Hammersmith and Fulham</option>
+             <option value="Haringey" >Haringey</option>
+             <option value="Harrow">Harrow</option>
+             <option value="Havering">Havering</option>
+             <option value="Hillingdon" >Hillingdon</option>
+             <option value="Hounslow">Hounslow</option>
+             <option value="Islington" >Islington</option>
+             <option value="Kensington and Chelsea">Kensington and Chelsea</option>
+             <option value="Kingston upon Thames">Kingston upon Thames</option>
+             <option value="Lambeth">Lambeth</option>
+             <option value="Lewisham">Lewisham</option>
+             <option value="Merton">Merton</option>
+             <option value="Newham">Newham</option>
+             <option value="Redbridge">Redbridge</option>
+             <option value="Richmond upon Thames">Richmond upon Thames</option>
+             <option value="Southwark">Southwark</option>
+             <option value="Sutton">Sutton</option>
+             <option value="Tower Hamlets">Tower Hamlets</option>
+             <option value="Waltham Forest">Waltham Forest</option>
+             <option value="Wandsworth">Wandsworth</option>
+             <option value="Westminster">Westminster</option>
+        </select>
+        <br>
+        <br>
+        <label for="property_type">Property Type:   </label>
+        <select id="property_type" name="property_type" required>
+            <option value="Aparthotel" >Aparthotel</option>
+            <option value="Apartment" >Apartment</option>
+            <option value="Barn" >Barn</option>
+            <option value="Bed and breakfast">Bed and breakfast</option>
+            <option value="Boat">Boat</option>
+            <option value="Boutique hotel">Boutique hotel</option>
+            <option value="Bungalow">Bungalow</option>
+            <option value="Bus">Bus</option>
+            <option value="Cabin">Cabin</option>
+            <option value="Camper/RV">Camper/RV</option>
+            <option value="Campsite">Campsite</option>
+            <option value="Casa particular (Cuba)">Casa particular (Cuba)</option>
+            <option value="Chalet">Chalet</option>
+            <option value="Condominium">Condominium</option>
+            <option value="Cottage">Dome house</option>
+            <option value="Dome house">Dome house</option>
+            <option value="Earth house">Earth house</option>
+            <option value="Farm stay">Farm stay</option>
+            <option value="Guest suite">Guest suite</option>
+            <option value="Guesthouse">Guesthouse</option>
+            <option value="Hostel">Hostel</option>
+            <option value="Hotel">Hotel</option>
+            <option value="House">House</option>
+            <option value="Houseboat">Houseboat</option>
+            <option value="Hut">Hut</option>
+            <option value="Island">Island</option>
+            <option value="Lighthouse">Lighthouse</option>
+            <option value="Loft">Loft</option>
+            <option value="Minsu (Taiwan)">Minsu (Taiwan)</option>
+            <option value="Other">Other</option>
+            <option value="Parking Space">Parking Space</option>
+            <option value="Plane">Plane</option>
+            <option value="Ryokan (Japan)">Ryokan (Japan)</option>
+            <option value="Serviced apartment">Serviced apartment</option>
+            <option value="Shepherd's hut (U.K., France)">Shepherd's hut (U.K., France)</option>
+            <option value="Tent">Tent</option>
+            <option value="Tiny house">Tiny house</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Treehouse">Treehouse</option>
+            <option value="Villa">Villa</option>
+            <option value="Windmill">Windmill</option>
+            <option value="Yurt">Yurt</option>
+        </select>
+        <br>
+        <br>
+        <label for="room_type">Room type:  </label>
+        <select id="room_type" name="room_type" required>
+            <option value="Entire home/apt" >Entire home/apt
+            <option value="Hotel room" >Hotel room
+            <option value="Private room" >Private room
+            <option value="Shared room" >Shared room
+        </select>
+        <br>
+        <br>
+        <label>Accommodation capacity:  </label>
+        <input name="accommodates" type="number" required>
+        <br>
+        <br>
+        <label>Bedrooms:  </label>
+        <input name="bedrooms" type="number" required>
+        <br>
+        <br>
+        <label>Bathrooms:  </label>
+        <input name="bathrooms" type="number" required>
+        <br>
+        <br>
+        <label for="WiFi">Wifi:  </label>
+        <select id="WiFi" name="WiFi" required>
+            <option >Yes</option>
+            <option >No</option>
+        </select>
+        <br>
+        <br>
+        <label for="air_conditioning">Air Conditioning:  </label>
+        <select id="air_conditioning" name="air_conditioning" required>
+            <option value="yes">Yes</option>
+            <option value="No" >No</option>
+        </select>
+        <br>
+        <br>
+         <label for="heating">Heating:  </label>
+        <select id="heating" name="heating" required>
+            <option value="Yes">Yes</option>
+            <option value="No" >No</option>
+        </select>
+        <br>
+        <br>
+        <label for="swimming_pool">Swimming pool: </label>
+        <select id="swimming_pool" name="swimming_pool" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+</div>
+<div class="result" align="center">
+    {% if result %}
+        {% for variable, value in original_input.items() %}
+            <br>
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <br>
+        <br>
+        <br> Listing price of your property is:
+           <p style="font-size:50px">${{ result }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
